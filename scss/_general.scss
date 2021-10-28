@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Contenedor padre
+.contenedor--fluid {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+// Padding
+.padding {
+    padding: 0px 60px;
+}

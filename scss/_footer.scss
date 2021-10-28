@@ -1,0 +1,36 @@
+// Lánea separadora
+.foo__separador {
+    border-top: 1px solid $ironstone;
+    padding-top: 15px;
+}
+
+// Texto pie de página
+.foo__text {
+    color: $ironstone;
+    font-family: $fuente1;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+// Iconos redes sociales
+.foo__redes--icon {
+    font-size: 2.5rem;
+	text-align: center;
+    a {
+        text-decoration: none;
+        color: $ironstone;
+        cursor: pointer;
+    }
+}
+
+// Pie de página - texto copy
+.foo__copy {
+    background: $ironstone;
+    padding: 10px;
+    p {
+        color: $blanco;
+        font-family: $fuente1;
+        text-align: center;
+        margin: 0;
+    }
+}

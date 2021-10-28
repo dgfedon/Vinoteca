@@ -1,0 +1,120 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.contenedor--fluid {
+  width: 100%;
+  overflow-x: hidden; }
+
+.padding {
+  padding: 0px 60px; }
+
+.cards--item {
+  margin: 0px 30px 15px 30px;
+  border: solid 1px #4B4341;
+  border-radius: 10px;
+  max-width: 250px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.borrar-producto {
+  border: none;
+  background: none; }
+
+.btn--compra {
+  border: none;
+  border-radius: 5px;
+  background: #E9DDD4;
+  padding: 4px 10px; }
+  .btn--compra:hover {
+    transition: 1s;
+    background: #4B4341;
+    color: #fffffa;
+    border: none; }
+
+.contenedor__cards {
+  display: flex;
+  justify-content: center; }
+
+.modal--header {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(.3rem - 1px);
+  border-top-right-radius: calc(.3rem - 1px); }
+
+header {
+  background: #4B4341;
+  height: 100px; }
+
+.header--distribución {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.logo--img {
+  height: 80px; }
+
+.header--cart {
+  font-size: 2rem;
+  color: white; }
+
+.btn--carrito {
+  border: none;
+  background: none; }
+  .btn--carrito:hover {
+    transition: 1s;
+    background: #4B4341;
+    color: #fffffa;
+    border: none; }
+
+#cantidad--productos {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  margin: 0px 20px 0px 5px; }
+
+.foo__separador {
+  border-top: 1px solid #4B4341;
+  padding-top: 15px; }
+
+.foo__text {
+  color: #4B4341;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  text-align: center; }
+
+.foo__redes--icon {
+  font-size: 2.5rem;
+  text-align: center; }
+  .foo__redes--icon a {
+    text-decoration: none;
+    color: #4B4341;
+    cursor: pointer; }
+
+.foo__copy {
+  background: #4B4341;
+  padding: 10px; }
+  .foo__copy p {
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 0; }
+
+.index--parallax {
+  background-image: url("../assets/img/parallax_vino.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  margin-bottom: 40px;
+  opacity: 0.9; }
+  .index--parallax h1 {
+    padding: 150px 60px 0px 60px;
+    font-size: 5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center; }

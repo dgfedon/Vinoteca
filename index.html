@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap v4.6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Google fonts -->
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <!-- Título -->
+    <title>Vinoteca: Home</title>
+    <link rel="shortcut icon" href="assets/img/vinoteca.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <!-- Apertura contenedor padre -->
+    <div class="contenedor--fluid">
+
+        <!-- Apertura fila encabezado -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- Apertura encabezado -->
+                <header class="header--distribución padding">
+                    <!-- Apertura logo -->
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/vinoteca_logo.png" alt="Vinoteca - Logo" class="logo--img">
+                    </a>
+                    <!-- Cierre logo -->
+                    <!-- Apertura carrito de compras -->
+                    <button class="btn--carrito">
+                        <i class="bi bi-cart-plus header--cart"><span class="cantidad--productos"> 0</span></i>
+                    </button>
+                    <!-- Cierre carrito de compras -->
+                </header>
+                <!-- Cierre encabezado -->
+            </div>
+        </div>
+        <!-- Cierre fila encabezado -->
+
+        <!-- Apertura fila parallax -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="index--parallax">
+                    <h1>Entrega</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Cierre fila parallax -->
+
+        <!-- Apertura encabezado productos -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h4 class="text-center">Productos</h4>
+            </div>
+        </div><br>
+        <!-- Cierre encabezado productos -->
+
+        <!-- Apertura cards productos -->
+        <div class="padding contenedor__cards">
+            <div id="contenedor__cards--item" class="card-columns">
+                <!-- Cards generadas por el JS -->
+            </div>
+        </div><br>
+        <!-- Cierre cards productos -->
+
+        <!-- Apertura carrito de compras -->
+        <div id="contenedor__carrito" class="padding" style="display: none">
+            <h4 class="text-center">Carrito de compras</h4>
+
+            <!-- Apertura tabla compras -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Subtotal Producto</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="contenedor__carrito--item">
+                    <!-- Items agregados al carrito por JS -->
+                </tbody>
+                    <!-- Subtotal compra -->
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">Subtotal:</th>
+                        <th scope="col">
+                            <p id="subtotal"></p>
+                        </th>
+                    </tr>
+                    <!-- IVA compra -->
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">IVA:</th>
+                        <th scope="col">
+                            <p id="IVA"></p>
+                        </th>
+                    </tr>
+                    <!-- Total compra -->
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">Total:</th>
+                        <th scope="col">
+                            <p class="total"></p>
+                        </th>
+                    </tr>
+            </table>
+            <!-- Cierre tabla compras -->
+
+            <!-- Apertura finalizar compra -->
+            <div>
+                <!-- Botón realizar compra -->
+                <button type="button" class="btn--compra btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Terminar compra</button>
+
+                <!-- Apertura modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal--header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Gracias por su compra</h5>
+                            </div>
+                            <div class="modal-body text-center">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Producto</th>
+                                            <th scope="col">Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="compra--realizada">
+                                        <!-- Productos seleccionados -->
+                                    </tbody>
+                                    <!-- Cantidad de productos en compra -->
+                                    <tr>
+                                        <th colspan="1" scope="col" class="text-right">Productos totales:</th>
+                                        <th scope="col">
+                                        <p class="cantidad--productos"></p>
+                                        </th>
+                                    </tr>
+                                    <!-- Total compra -->
+                                    <tr>
+                                        <th colspan="1" scope="col" class="text-right">Total compra:</th>
+                                        <th scope="col">
+                                        <p class="total"></p>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cierre modal -->
+
+            </div>
+            <!-- Cierre finalizar compra -->
+            
+        </div><br>
+        <!-- Cierre carrito de compras -->
+
+        <!-- Apertura fila pie de página -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                
+
+
+                <div class="d-flex justify-content-around align-items-center foo__separador" style="height: 150px;">
+                    <!-- LOGO -->
+                    <a class="navbar-brand align-items-center" href="#">
+                        <span class="foo__text">Vinoteca</span>
+                    </a>
+                    <!-- Contactos -->
+                    <ul class="nav align-items-center">
+                        <li class="nav-item">
+                            <span class="foo__text">11 XXXX XXXX</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="foo__text px-4">vinoteca@gmail.com</span>
+                        </li>
+                        <!-- Apertura redes sociales -->
+                        <div class="foo__redes--icon">
+                            <ul class="nav align-items-center">
+                                <li class="nav-item">
+                                    <!-- Instagram -->
+                                    <a target="_blank" href="https://www.instagram.com/" class="transicionIG nav-link">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <!-- Facebook -->
+                                    <a target="_blank" href="https://www.facebook.com/" class="transicionFB nav-link">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Cierre redes sociales -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Cierre fila pie de página -->
+
+        <!-- Apertura  fila texto copy -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <footer class="foo__copy">
+                    <!-- Texto copy -->
+                    <p>Copyright &copy; Vinoteca, todos los derechos reservados.</p>
+                    <!-- Autor -->
+                    <p>Creado por <strong>Dariana Garcia</strong></p>
+                </footer>
+            </div>
+        </div>
+        <!-- Cierre fila texto copy -->
+
+    </div>
+    <!-- Cierre contenedor padre -->
+
+<!-- Bootstrap v4.6 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<!-- JS propio -->
+<script src="js/principal.js"></script>
+<script src="js/globales.js"></script>
+
+</body>
+</html>
