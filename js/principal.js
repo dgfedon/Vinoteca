@@ -19,7 +19,7 @@ class Producto {
 
 // Array productos
 let productos = [];
-let urlProd = '/data/productos.json';
+let urlProd = './data/productos.json';
 
 // Archivo productos.json
 $.get(urlProd, function(datos){
@@ -125,7 +125,7 @@ function carritoMontoTotal(){
 
         // IVA compra
         $('#IVA').html(`${iva.toFixed(2)}`);
-        
+
         // Total compra
         $('.total').html(`${total.toFixed(2)}`);
 };
