@@ -1,7 +1,7 @@
 // Reemplazar contenido h1 con Jquery
 $('h1').html(`Vinoteca`);
 // Efecto .slideUp .slideDown
-$('h1').css({ opacity:'0.8', height:'400px'}).slideUp(1000).slideDown(1500);
+$('h1').css({opacity:'0.8', height:'400px'}).slideUp(1000).slideDown(1500);
 console.log($('h1').text());
 
 // Class constructor productos
@@ -19,7 +19,7 @@ class Producto {
 
 // Array productos
 let productos = [];
-let urlProd = 'data/productos.json';
+let urlProd = '/data/productos.json';
 
 // Archivo productos.json
 $.get(urlProd, function(datos){
@@ -43,7 +43,12 @@ function mostrarProd() {
         
         // Agregar productos en el carrito
         $(`#boton${producto.id}`).click(() => {
-                mostrarCompra(producto.id)
+
+            // Carrito vacio
+            $('#carrito--vacio').remove();
+
+            // Mostrar productos agregados al carrito
+            mostrarCompra(producto.id)
         });
 
         // Carga cards listas con Jquery .ready
@@ -114,10 +119,13 @@ function carritoMontoTotal(){
 
         // Contador de productos en carrito
         $('.cantidad--productos').html(`${contador}`);
+
         // Subtotal compra
         $('#subtotal').html(`${subtotal.toFixed(2)}`);
+
         // IVA compra
         $('#IVA').html(`${iva.toFixed(2)}`);
+        
         // Total compra
         $('.total').html(`${total.toFixed(2)}`);
 };
