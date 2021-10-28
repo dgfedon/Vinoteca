@@ -19,7 +19,7 @@ class Producto {
 
 // Array productos
 let productos = [];
-let urlProd = './data/productos.json';
+let urlProd = 'data/productos.json';
 
 // Archivo productos.json
 $.get(urlProd, function(datos){
