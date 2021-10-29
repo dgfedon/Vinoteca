@@ -84,45 +84,63 @@ header {
 @media only screen and (min-width: 855px) {
   .logo--img {
     height: 80px; }
-  .header--cart {
-    font-size: 2.5rem;
-    color: white; }
   .btn--carrito {
+    position: fixed;
+    bottom: 50px;
+    right: 35px;
+    border: none;
+    z-index: 1;
+    border-radius: 50%;
+    padding: 15px 25px 15px 25px;
+    background-color: #4B4341; }
+  .btn--general {
     border: none;
     background: none; }
-    .btn--carrito:hover {
+    .btn--general:hover {
       border: none; }
+  .estilo--icon {
+    font-size: 2.5rem;
+    color: white; }
   .cantidad--productos {
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     color: #4B4341;
     background: white;
     border-radius: 50%;
-    padding: 0px 5px;
-    position: relative;
-    top: 10px;
-    right: 50px; } }
+    padding: 0px 4px;
+    position: absolute;
+    right: 50px;
+    bottom: 8px; } }
 
 @media only screen and (min-width: 0px) and (max-width: 854px) {
   .logo--img {
     height: 60px; }
-  .header--cart {
-    font-size: 2rem;
-    color: white; }
   .btn--carrito {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    border: none;
+    z-index: 1;
+    border-radius: 50%;
+    padding: 14px 24px 14px 24px;
+    background-color: #4B4341; }
+  .btn--general {
     border: none;
     background: none; }
-    .btn--carrito:hover {
+    .btn--general:hover {
       border: none; }
+  .estilo--icon {
+    font-size: 2.3rem;
+    color: white; }
   .cantidad--productos {
     font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
     color: #4B4341;
     background: white;
     border-radius: 50%;
-    padding: 0px 5px;
-    position: relative;
-    top: 10px;
+    padding: 0px 3px;
+    position: absolute;
+    bottom: 5px;
     right: 45px; } }
 
 @media only screen and (min-width: 855px) {

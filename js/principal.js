@@ -4,6 +4,8 @@ $('h1').html(`Vinoteca`);
 $('h1').css({opacity:'0.8', height:'400px'}).slideUp(1000).slideDown(1500);
 console.log($('h1').text());
 
+
+
 // Class constructor productos
 class Producto {
     constructor (id, nombre, precio, img, stock){
@@ -17,9 +19,16 @@ class Producto {
     }
 };
 
+
+
 // Array productos
 let productos = [];
+// Array url .json
 let urlProd = 'data/productos.json';
+// Array carrito de compras
+let carrito = [];
+
+
 
 // Archivo productos.json
 $.get(urlProd, function(datos){
@@ -33,6 +42,8 @@ $.get(urlProd, function(datos){
     // Mostrar productos en el HTML
     mostrarProd(productos);
 });
+
+
 
 // Insertar cards de productos en el HTML
 function mostrarProd() {
@@ -58,12 +69,10 @@ function mostrarProd() {
         $('#contenedor__cards--item').ready(function(){
             console.log('Items Cards => Cargadas');
         });
-
     });
 };
 
-// Array carrito de compras
-let carrito = [];
+
 
 // Función mostrar en el carrito
 function mostrarCompra(productoId){
@@ -73,13 +82,13 @@ function mostrarCompra(productoId){
         let busqueda = productos.find((prod) => prod.id == productoId);
             carrito.push(busqueda);
 
-            // Items agregados en carrito
+            // Items agregados al carrito
             itemsCarrito(busqueda);
 
-            // Efecto aparecer carrito .show
+            // Aparecer carrito .show
             $("#contenedor__carrito").show(1000);
 
-            // Borrar productos del carrito
+            // Btn borrar items del carrito
             $(`#borrar${busqueda.id}`).on('click', function eliminar(){
                 $(this).closest('tr').remove()
                 carrito = carrito.filter((prodEliminado) => prodEliminado.id != busqueda.id);
@@ -89,9 +98,9 @@ function mostrarCompra(productoId){
                 carritoMontoTotal();
             });
 
-            // Items agregados al terminar compra
-            itemsTerminarCompra(busqueda);
-            
+            // Btn finalizar compra (mensaje de despedida)
+            $('#btn__finalizar--compra').on('click', msjTerminarCompra)
+
             // Mostrar subtotal, iva, total en carrito
             carritoMontoTotal();
 
@@ -110,6 +119,8 @@ function mostrarCompra(productoId){
     localStorage.setItem('productosLS', JSON.stringify(carrito));
 
 };
+
+
 
 // Función montos totales en carrito
 function carritoMontoTotal(){
