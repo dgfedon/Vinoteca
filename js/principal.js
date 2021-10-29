@@ -45,7 +45,10 @@ function mostrarProd() {
         $(`#boton${producto.id}`).click(() => {
 
             // Carrito vacio
-            $('#carrito--vacio').remove();
+            $('#carrito--vacio').hide()
+
+            // Mostrar mensaje al agregar producto
+            msjProdAgregado(producto)
 
             // Mostrar productos agregados al carrito
             mostrarCompra(producto.id)

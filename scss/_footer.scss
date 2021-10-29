@@ -1,36 +1,111 @@
-// Lánea separadora
-.foo__separador {
-    border-top: 1px solid $ironstone;
-    padding-top: 15px;
-}
+// Vista desktop
+@media only screen and (min-width:855px) {
+    // Alineación footer
+    .foo__diplay--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-// Texto pie de página
-.foo__text {
-    color: $ironstone;
-    font-family: $fuente1;
-    font-size: 1.4rem;
-    text-align: center;
-}
+    // Línea separadora
+    .foo__separador {
+        border-top: 1px solid $ironstone;
+        padding-top: 30px;
+        margin-bottom: 15px;
+    }
 
-// Iconos redes sociales
-.foo__redes--icon {
-    font-size: 2.5rem;
-	text-align: center;
-    a {
-        text-decoration: none;
+    // Texto pie de página
+    .foo__text {
         color: $ironstone;
-        cursor: pointer;
+        font-family: $fuente1;
+        text-align: center;
+        h2 {
+            font-size: 2rem;
+        }
+        h6 {
+            font-size: 1.8rem;
+        }
+        span {
+            font-size: 1.2rem;
+        }
+    }
+
+    // Iconos redes sociales
+    .foo__redes--icon {
+        font-size: 2.5rem;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color: $ironstone;
+            cursor: pointer;
+        }
+    }
+
+    // Pie de página - texto copy
+    .foo__copy {
+        background: $ironstone;
+        padding: 10px;
+        p {
+            color: $blanco;
+            font-family: $fuente1;
+            text-align: center;
+            margin: 0;
+        }
     }
 }
 
-// Pie de página - texto copy
-.foo__copy {
-    background: $ironstone;
-    padding: 10px;
-    p {
-        color: $blanco;
+// Vista mobile
+@media only screen and (min-width:0px) and (max-width:854px) {
+    // Alineación footer
+    .foo__diplay--flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    // Línea separadora
+    .foo__separador {
+        border-top: 1px solid $ironstone;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    // Texto pie de página
+    .foo__text {
+        color: $ironstone;
         font-family: $fuente1;
         text-align: center;
-        margin: 0;
+        h2 {
+            font-size: 1.5rem;
+            padding-bottom: 5px;
+        }
+        h6 {
+            font-size: 1.2rem;
+        }
+        span {
+            font-size: 1.1rem;
+        }
+    }
+
+    // Iconos redes sociales
+    .foo__redes--icon {
+        font-size: 2rem;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color: $ironstone;
+            cursor: pointer;
+        }
+    }
+
+    // Pie de página - texto copy
+    .foo__copy {
+        background: $ironstone;
+        padding: 10px;
+        p {
+            color: $blanco;
+            font-family: $fuente1;
+            text-align: center;
+            margin: 0;
+        }
     }
 }
