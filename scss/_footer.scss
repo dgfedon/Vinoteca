@@ -9,25 +9,26 @@
 
     // Línea separadora
     .foo__separador {
-        border-top: 1px solid $ironstone;
         padding-top: 30px;
-        margin-bottom: 15px;
+        padding-bottom: 30px;
+        background: #523A32;
+        opacity: 0.6;
     }
 
     // Texto pie de página
     .foo__text {
-        color: $ironstone;
+        color: white;
         font-family: $fuente1;
         text-align: center;
-        h2 {
-            font-size: 2rem;
-        }
-        h6 {
-            font-size: 1.8rem;
-        }
         span {
             font-size: 1.2rem;
         }
+    }
+    .foo__text--encabezado {
+        color: white;
+        font-family: $fuente1;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     // Iconos redes sociales
@@ -36,7 +37,7 @@
         text-align: center;
         a {
             text-decoration: none;
-            color: $ironstone;
+            color: white;
             cursor: pointer;
         }
     }
@@ -64,26 +65,27 @@
     }
     // Línea separadora
     .foo__separador {
-        border-top: 1px solid $ironstone;
         padding-top: 30px;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
+        background: #523A32;
+        opacity: 0.6;
     }
 
     // Texto pie de página
     .foo__text {
-        color: $ironstone;
+        color: $blanco;
         font-family: $fuente1;
         text-align: center;
-        h2 {
-            font-size: 1.5rem;
-            padding-bottom: 5px;
-        }
-        h6 {
-            font-size: 1.2rem;
-        }
         span {
             font-size: 1.1rem;
         }
+    }
+    .foo__text--encabezado {
+        color: white;
+        font-family: $fuente1;
+        font-size: 1.2rem;
+        text-align: center;
+        padding-top: 20px;
     }
 
     // Iconos redes sociales
@@ -92,7 +94,7 @@
         text-align: center;
         a {
             text-decoration: none;
-            color: $ironstone;
+            color: $blanco;
             cursor: pointer;
         }
     }

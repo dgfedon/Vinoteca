@@ -16,6 +16,12 @@
     .padding {
         padding: 0px 60px;
     }
+
+    // Encabezados
+    .text__encabezado {
+        color: #4B4341;
+        font-size: 2.5rem;
+    }
 }
 
 // Vista mobile
@@ -23,5 +29,11 @@
     // Padding
     .padding {
         padding: 0px 40px;
+    }
+
+    // Encabezados
+    .text__encabezado {
+        color: #4B4341;
+        font-size: 1.8rem;
     }
 }

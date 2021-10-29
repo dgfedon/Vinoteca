@@ -10,11 +10,17 @@
 
 @media only screen and (min-width: 855px) {
   .padding {
-    padding: 0px 60px; } }
+    padding: 0px 60px; }
+  .text__encabezado {
+    color: #4B4341;
+    font-size: 2.5rem; } }
 
 @media only screen and (min-width: 0px) and (max-width: 854px) {
   .padding {
-    padding: 0px 40px; } }
+    padding: 0px 40px; }
+  .text__encabezado {
+    color: #4B4341;
+    font-size: 1.8rem; } }
 
 .cards--item {
   margin: 0px 30px 15px 30px;
@@ -33,8 +39,8 @@
 .btn--compra {
   border: none;
   border-radius: 5px;
-  background: #E9DDD4;
-  color: #4B4341;
+  background: #978984;
+  color: #ffffff;
   padding: 4px 10px; }
   .btn--compra:hover {
     transition: 1s;
@@ -59,7 +65,7 @@
   z-index: 10; }
   .contenedor__mensaje--item .mensaje--body {
     border-radius: 10px;
-    background: #4B4341;
+    background-color: #978984;
     color: white;
     padding: 5px 40px; }
     .contenedor__mensaje--item .mensaje--body strong {
@@ -125,25 +131,27 @@ header {
     justify-content: space-between;
     align-items: center; }
   .foo__separador {
-    border-top: 1px solid #4B4341;
     padding-top: 30px;
-    margin-bottom: 15px; }
+    padding-bottom: 30px;
+    background: #523A32;
+    opacity: 0.6; }
   .foo__text {
-    color: #4B4341;
+    color: white;
     font-family: "Montserrat", sans-serif;
     text-align: center; }
-    .foo__text h2 {
-      font-size: 2rem; }
-    .foo__text h6 {
-      font-size: 1.8rem; }
     .foo__text span {
       font-size: 1.2rem; }
+  .foo__text--encabezado {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    text-align: center; }
   .foo__redes--icon {
     font-size: 2.5rem;
     text-align: center; }
     .foo__redes--icon a {
       text-decoration: none;
-      color: #4B4341;
+      color: white;
       cursor: pointer; }
   .foo__copy {
     background: #4B4341;
@@ -160,26 +168,28 @@ header {
     flex-direction: column;
     align-items: center; }
   .foo__separador {
-    border-top: 1px solid #4B4341;
     padding-top: 30px;
-    margin-bottom: 30px; }
+    padding-bottom: 30px;
+    background: #523A32;
+    opacity: 0.6; }
   .foo__text {
-    color: #4B4341;
+    color: #ffffff;
     font-family: "Montserrat", sans-serif;
     text-align: center; }
-    .foo__text h2 {
-      font-size: 1.5rem;
-      padding-bottom: 5px; }
-    .foo__text h6 {
-      font-size: 1.2rem; }
     .foo__text span {
       font-size: 1.1rem; }
+  .foo__text--encabezado {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 20px; }
   .foo__redes--icon {
     font-size: 2rem;
     text-align: center; }
     .foo__redes--icon a {
       text-decoration: none;
-      color: #4B4341;
+      color: #ffffff;
       cursor: pointer; }
   .foo__copy {
     background: #4B4341;
@@ -198,10 +208,63 @@ header {
   background-size: cover;
   height: 500px;
   margin-bottom: 40px;
-  opacity: 0.9; }
+  opacity: 0.8; }
   .index--parallax h1 {
-    padding: 150px 60px 0px 60px;
+    padding: 150px 50px 0px 50px;
     font-size: 5rem;
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-align: center; }
+
+.seccion__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  background-image: url("../assets/img/luz_vino.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.6; }
+  .seccion__info .seccion__info--items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: 0px 10px;
+    background: #523A32;
+    opacity: 0.8; }
+  .seccion__info .info--text {
+    opacity: 1;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center; }
+
+@media only screen and (min-width: 0px) and (max-width: 854px) {
+  .seccion__info {
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    background-image: url("../assets/img/luz_vino.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.6; }
+    .seccion__info .seccion__info--items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 50%;
+      width: 210px;
+      height: 210px;
+      margin: 5px 0px;
+      background: #523A32;
+      opacity: 0.8; }
+    .seccion__info .info--text {
+      opacity: 1;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center; } }

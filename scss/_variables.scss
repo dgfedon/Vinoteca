@@ -2,7 +2,7 @@
 $vino: #5E2129;
 $arena: #BA9B8E;
 $bucanero: #6F313C;
-$grisFuscous: #585651;
+$grisFuscous: #978984;
 $ironstone: #4B4341;
 $blanco: #ffffff;
 
@@ -13,5 +13,11 @@ $fuente2: 'Open Sans', sans-serif;
 @mixin flex-justify-space-between {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-justify-content-align-items-center {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
