@@ -41,6 +41,7 @@ $.get(urlProd, function(datos){
 
     // Mostrar productos en el HTML
     mostrarProd(productos);
+    generarCarrito()
 });
 
 
@@ -53,7 +54,7 @@ function mostrarProd() {
         itemsCards(producto);
         
         // Agregar productos en el carrito
-        $(`#boton${producto.id}`).click(() => {
+        $(`#agregar${producto.id}`).click(() => {
 
             // Carrito vacio
             $('.carrito--vacio').hide()
@@ -86,11 +87,11 @@ function añadirCompra(productoId){
             itemsCarrito(busqueda);
 
             // Aparecer carrito .show
-            $("#contenedor__carrito").show(1000);
+            $("#contenedor__carrito").show();
 
             // Btn borrar items del carrito
             $(`#borrar${busqueda.id}`).on('click', function eliminar(){
-                $(this).closest('tr').remove()
+                $(this).parents('tr').remove()
                 carrito = carrito.filter((prodEliminado) => prodEliminado.id != busqueda.id);
 
                 // Actualizar localStorage
