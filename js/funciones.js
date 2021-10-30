@@ -18,7 +18,7 @@ function generarCarrito() {
     return $('#generar__carrito--compras').append(`
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content" id="modal--resumen">
+                <div class="modal-content">
                     <div class="modal--header">
                         <h5 class="modal-title text-center" id="exampleModalLabel">Carrito de compras</h5>
                     </div>
@@ -114,21 +114,41 @@ function itemsCarrito(producto){
 
 
 
-// Función mensaje al finalizar compra (despedida)
-function msjTerminarCompra() {
-        $('#modal--resumen').html(`
-                                <div class="modal--header">
-                                    <h5 class="modal-title text-center" id="exampleModalLabel">¡Gracias por su compra!</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="text-center">En breve nos comunicaremos.</p>
-                                    <p class="text-center">Orden n°: 000000012030</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                </div>`);
+// Función al eliminar productos del carrito
+function eliminarProd(busqueda) {
+    $(`#borrar${busqueda.id}`).click( function () {
+        if (busqueda.seleccion > 1) {
+            busqueda.seleccion = busqueda.seleccion - 1;
 
-    vaciarCarrito()
+            // Actualizar cantidad producto
+            $(`.seleccion--prod${busqueda.id}`).html(`
+                                                    <span class="seleccion--prod${busqueda.id}">${busqueda.seleccion}</span>`);
+
+            // Actualizar subtotal producto 
+            $(`#subtotal--prod${busqueda.id}`).html(`
+                                                    <span id="subtotal--prod${busqueda.id}">${busqueda.subTotalProd().toFixed(2)}</span>`);
+
+            // Actualizar localStorage
+            localStorage.setItem('productosLS', JSON.stringify(carrito));
+
+            // Actualizar montos al eliminar producto
+            calcularTotales();
+        } else {
+            $(this).parents('tr').remove()
+            carrito = carrito.filter((prodEliminado) => prodEliminado.id != busqueda.id);
+
+            // Si el carrito se vacía completamente
+            if (carrito == false) {
+                vaciarCarrito();
+            };
+
+            // Actualizar localStorage
+            localStorage.setItem('productosLS', JSON.stringify(carrito));
+
+            // Actualizar montos al eliminar producto
+            calcularTotales();
+        };
+    });
 };
 
 
@@ -147,5 +167,38 @@ function vaciarCarrito() {
                                         </tr>`);
 
     // Eliminar del carrito
-    calcularTotales()
+    calcularTotales();
+    localStorage.clear('productosLS');
+};
+
+
+
+// Función mensaje al finalizar compra (despedida)
+function msjTerminarCompra() {
+    
+    $('.modal-content').html(`
+                            <div class="modal--header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">¡Gracias por su compra!</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-center">En breve nos comunicaremos.</p>
+                                <p class="text-center">Orden n°: 000000012030</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="reiniciar--carrito">Cerrar</button>
+                            </div>`);
+
+    // Vaciar carrito 
+    vaciarCarrito();
+};
+
+
+
+// Función recuperar productos del localStorage
+function recuperarLS() {
+    if (JSON.parse(localStorage.getItem('productosLS')) != null) {
+        let recuperadosLS = JSON.parse(localStorage.getItem('productosLS'));
+
+        console.log('Productos recuperados LS :', recuperadosLS);
+    };
 };

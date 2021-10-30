@@ -17,6 +17,9 @@ class Producto {
         this.seleccion = 1;
         this.subtotal = this.precio;
     }
+    subTotalProd() {
+        return this.subTotal = this.precio * this.seleccion
+    }
 };
 
 
@@ -32,7 +35,6 @@ let carrito = [];
 
 // Archivo productos.json
 $.get(urlProd, function(datos){
-    console.log(datos);
 
     // Agregar productos en el Array
     datos.forEach((prod) => {
@@ -41,7 +43,8 @@ $.get(urlProd, function(datos){
 
     // Mostrar productos en el HTML
     mostrarProd(productos);
-    generarCarrito()
+    generarCarrito();
+    recuperarLS();
 });
 
 
@@ -57,18 +60,18 @@ function mostrarProd() {
         $(`#agregar${producto.id}`).click(() => {
 
             // Carrito vacio
-            $('.carrito--vacio').hide()
+            $('.carrito--vacio').hide();
 
             // Mostrar mensaje al agregar producto
-            msjProdAgregado(producto)
+            msjProdAgregado(producto);
 
             // Mostrar productos agregados al carrito
-            añadirCompra(producto.id)
+            añadirCompra(producto.id);
         });
 
         // Carga cards listas con Jquery .ready
-        $('#contenedor__cards--item').ready(function(){
-            console.log('Items Cards => Cargadas');
+        $('#contenedor__cards--item').ready( function(){
+            console.log('Items Cards -> Cargadas');
         });
     });
 };
@@ -90,22 +93,13 @@ function añadirCompra(productoId){
             $("#contenedor__carrito").show();
 
             // Btn borrar items del carrito
-            $(`#borrar${busqueda.id}`).on('click', function eliminar(){
-                $(this).parents('tr').remove()
-                carrito = carrito.filter((prodEliminado) => prodEliminado.id != busqueda.id);
-
-                // Actualizar localStorage
-                localStorage.setItem('productosLS', JSON.stringify(carrito));
-
-                // Actualizar montos al eliminar producto
-                calcularTotales();
-            });
+            eliminarProd(busqueda);
 
             // Btn vaciar carrito
-            $('#vaciar--carrito').on('click', vaciarCarrito)
+            $('#vaciar--carrito').on('click', vaciarCarrito);
 
             // Btn finalizar compra (mensaje de despedida)
-            $('#btn__finalizar--compra').on('click', msjTerminarCompra)
+            $('#btn__finalizar--compra').on('click', msjTerminarCompra);
 
             // Mostrar subtotal, iva, total en carrito
             calcularTotales();
@@ -123,7 +117,6 @@ function añadirCompra(productoId){
 
     // Almacenamiento en el localStorage 
     localStorage.setItem('productosLS', JSON.stringify(carrito));
-
 };
 
 
