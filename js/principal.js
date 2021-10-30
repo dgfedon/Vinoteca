@@ -56,13 +56,13 @@ function mostrarProd() {
         $(`#boton${producto.id}`).click(() => {
 
             // Carrito vacio
-            $('#carrito--vacio').hide()
+            $('.carrito--vacio').hide()
 
             // Mostrar mensaje al agregar producto
             msjProdAgregado(producto)
 
             // Mostrar productos agregados al carrito
-            mostrarCompra(producto.id)
+            añadirCompra(producto.id)
         });
 
         // Carga cards listas con Jquery .ready
@@ -75,7 +75,7 @@ function mostrarProd() {
 
 
 // Función mostrar en el carrito
-function mostrarCompra(productoId){
+function añadirCompra(productoId){
     
     let encontrado = carrito.find((prod) => prod.id == productoId);
     if (encontrado == undefined){
@@ -92,17 +92,22 @@ function mostrarCompra(productoId){
             $(`#borrar${busqueda.id}`).on('click', function eliminar(){
                 $(this).closest('tr').remove()
                 carrito = carrito.filter((prodEliminado) => prodEliminado.id != busqueda.id);
+
+                // Actualizar localStorage
                 localStorage.setItem('productosLS', JSON.stringify(carrito));
-                
+
                 // Actualizar montos al eliminar producto
-                carritoMontoTotal();
+                calcularTotales();
             });
+
+            // Btn vaciar carrito
+            $('#vaciar--carrito').on('click', vaciarCarrito)
 
             // Btn finalizar compra (mensaje de despedida)
             $('#btn__finalizar--compra').on('click', msjTerminarCompra)
 
             // Mostrar subtotal, iva, total en carrito
-            carritoMontoTotal();
+            calcularTotales();
 
     } else {
         encontrado.seleccion = encontrado.seleccion + 1;
@@ -112,7 +117,7 @@ function mostrarCompra(productoId){
         $(`#subtotal--prod${encontrado.id}`).html(`${encontrado.subtotal}`);
 
         // Actualizar subtotal, iva, total en carrito si estan repetidos
-        carritoMontoTotal();
+        calcularTotales();
     }
 
     // Almacenamiento en el localStorage 
@@ -123,7 +128,7 @@ function mostrarCompra(productoId){
 
 
 // Función montos totales en carrito
-function carritoMontoTotal(){
+function  calcularTotales(){
     let total = 0; subtotal = 0; iva = 0;
 
         contador = carrito.reduce((acc, producto) => acc + producto.seleccion, 0);

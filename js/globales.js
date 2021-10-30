@@ -47,7 +47,7 @@ function itemsCarrito(producto){
 
 // Función mensaje al finalizar compra (despedida)
 function msjTerminarCompra() {
-    return $('#modal--resumen').html(`
+    $('#modal--resumen').html(`
                                 <div class="modal--header">
                                     <h5 class="modal-title text-center" id="exampleModalLabel">¡Gracias por su compra!</h5>
                                 </div>
@@ -58,4 +58,25 @@ function msjTerminarCompra() {
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 </div>`);
+
+    vaciarCarrito();
+};
+
+
+
+// Función vaciar carrito
+function vaciarCarrito() {
+    // Eliminar productos del carrito
+    carrito = [];
+
+    // Mensaje al vaciar el carrito
+    $('#contenedor__carrito--item').html(`
+                                        <div>
+                                            <p class="text-center carrito--vacio">
+                                            Vaciaste tu carrito
+                                            </p>
+                                        </div>`);
+
+    // Eliminar del carrito
+    calcularTotales()
 };
