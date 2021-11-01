@@ -1,7 +1,7 @@
 # Vinoteca
 Proyecto final Coderhouse - Javascript
 
-## [Implementación](https://dgfedon.github.io/Vinoteca/)
+## [Ver implementación](https://dgfedon.github.io/Vinoteca/)
 
 ## Librerías
-* [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - Framework web usado
+* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - Framework web usado
