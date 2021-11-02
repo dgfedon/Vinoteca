@@ -45,7 +45,7 @@ function vaciarCarrito() {
     // Mensaje al vaciar el carrito
     $('#contenedor__carrito--item').html(`
                                         <tr>
-                                            <td colspan="6" class="text-center carrito--vacio">
+                                            <td colspan="5" class="text-center carrito--vacio">
                                             Vaciaste tu carrito
                                             </td>
                                         </tr>`);
@@ -67,29 +67,30 @@ function msjTerminarCompra() {
         // Mensaje si no tienes productos en el carrito
         $('#contenedor__carrito--item').html(`
                                             <tr>
-                                                <td colspan="6" class="text-center carrito--vacio">
+                                                <td colspan="5" class="text-center carrito--vacio">
                                                 No tienes productos en el carrito
                                                 </td>
                                             </tr>`);
 
-    }
-    else{
+    } else{
 
         // Mensaje al finalizar la compra
         $('.modal-content').html(`
-                            <div class="modal--header">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">¡Gracias por su compra!</h5>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-center">En breve nos comunicaremos.</p>
-                                <p class="text-center">Orden n°: 000000012030</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="reiniciar--carrito">Cerrar</button>
-                            </div>`);
+                                <div class="modal--header">
+                                    <h5 class="modal-title text-center" id="exampleModalLabel">¡Gracias por su compra!</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center">En breve nos comunicaremos.</p>
+                                    <p class="text-center">Orden n°: 000000012030</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>`).fadeOut(4800);
         
         // Vaciar carrito 
         vaciarCarrito();
+        // Refrescar sitio
+        setInterval("refrescar()", 4900);
     }
 };
 
@@ -102,4 +103,11 @@ function recuperarLS() {
 
         console.log('Productos recuperados LS :', recuperadosLS);
     };
+};
+
+
+
+// Función refrescar sitio
+function refrescar() {
+    location.reload(true);
 };

@@ -39,7 +39,6 @@ function generarCarrito() {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
                                         <th scope="col">Producto</th>
                                         <th scope="col">Precio</th>
                                         <th scope="col">Cantidad</th>
@@ -52,21 +51,21 @@ function generarCarrito() {
                                 </tbody>
                                     <!-- Subtotal compra -->
                                     <tr>
-                                        <th colspan="4" scope="col" class="text-right">Subtotal:</th>
+                                        <th colspan="3" scope="col" class="text-right">Subtotal:</th>
                                         <th scope="col">
                                             <p id="subtotal"></p>
                                         </th>
                                     </tr>
                                     <!-- IVA compra -->
                                     <tr>
-                                        <th colspan="4" scope="col" class="text-right">IVA:</th>
+                                        <th colspan="3" scope="col" class="text-right">IVA:</th>
                                         <th scope="col">
                                             <p id="IVA"></p>
                                         </th>
                                     </tr>
                                     <!-- Total compra -->
                                     <tr>
-                                        <th colspan="4" scope="col" class="text-right">Total:</th>
+                                        <th colspan="3" scope="col" class="text-right">Total:</th>
                                         <th scope="col">
                                             <p class="total"></p>
                                         </th>
@@ -110,7 +109,6 @@ function msjProdAgregado(producto) {
 function itemsCarrito(producto){
     return $('#contenedor__carrito--item').append(`
                                                     <tr>
-                                                        <th scope="row">${producto.id}</th>
                                                         <td>${producto.nombre}</td>
                                                         <td id="precio--prod">${producto.precio}</td>
                                                         <td class="seleccion--prod${producto.id}">${producto.seleccion}</td>
