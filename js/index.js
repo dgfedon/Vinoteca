@@ -41,7 +41,7 @@ function generarCarrito() {
                                     <tr>
                                         <th scope="col">Producto</th>
                                         <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Cant</th>
                                         <th scope="col">Subtotal Producto</th>
                                         <th scope="col"></th>
                                     </tr>
