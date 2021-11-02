@@ -60,3 +60,9 @@
         }
     }
 }
+
+@media only screen and (min-width:0px) and (max-width:854px) {
+    .table td {
+        padding: 0.3rem !important;
+    }
+}

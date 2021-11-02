@@ -72,6 +72,10 @@
       padding-bottom: 10px;
       border-bottom: 2px solid white; }
 
+@media only screen and (min-width: 0px) and (max-width: 854px) {
+  .table td {
+    padding: 0.3rem !important; } }
+
 header {
   background: #4B4341;
   height: 100px; }
