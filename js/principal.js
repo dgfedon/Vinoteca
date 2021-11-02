@@ -1,11 +1,3 @@
-// Reemplazar contenido h1 con Jquery
-$('h1').html(`Vinoteca`);
-// Efecto .slideUp .slideDown
-$('h1').css({opacity:'0.8', height:'400px'}).slideUp(1000).slideDown(1500);
-console.log($('h1').text());
-
-
-
 // Class constructor productos
 class Producto {
     constructor (id, nombre, precio, img, stock){
@@ -18,7 +10,7 @@ class Producto {
         this.subtotal = this.precio;
     }
     subTotalProd() {
-        return this.subTotal = this.precio * this.seleccion
+        return this.precio * this.seleccion
     }
 };
 
@@ -34,7 +26,7 @@ let carrito = [];
 
 
 // Archivo productos.json
-$.get(urlProd, function(datos){
+$.get(urlProd, function (datos){
 
     // Agregar productos en el Array
     datos.forEach((prod) => {
@@ -106,10 +98,9 @@ function añadirCompra(productoId){
 
     } else {
         encontrado.seleccion = encontrado.seleccion + 1;
-        encontrado.subtotal = (encontrado.seleccion * encontrado.precio).toFixed(2);
 
         $(`.seleccion--prod${encontrado.id}`).html(`${encontrado.seleccion}`);
-        $(`#subtotal--prod${encontrado.id}`).html(`${encontrado.subtotal}`);
+        $(`#subtotal--prod${encontrado.id}`).html(`${encontrado.subTotalProd().toFixed(2)}`);
 
         // Actualizar subtotal, iva, total en carrito si estan repetidos
         calcularTotales();
